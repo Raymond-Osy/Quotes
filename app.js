@@ -10,3 +10,10 @@ changeBtn.onclick = function randomQuote(){
     var randomQuote = Math.floor(Math.random() * quotes.length);
     document.getElementById("random").innerHTML = quotes[randomQuote];
   };
+
+var addQuoteBtn = document.getElementById("addQuote");
+addQuoteBtn.onclick = function newQuote(){
+    var input = document.getElementById("input").value;
+    quotes.push(input);
+    var input = document.getElementById("input").value = "";
+};
