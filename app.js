@@ -1,7 +1,7 @@
 var quotes = [
     "Life will hit you up and throw you down, what matters is that you rise- Seni Sulyman",
     "Live each day as if it was the last- Steve Jobs",
-    "Be careful how you talk to yourself. You are always listening."
+    "Be careful how you talk to yourself. You are always listening- Raymond"
 ];
 
 // Add array for images as random image directly from splash will reqire page to be refreshed which in turn will clear previous stored array
@@ -24,12 +24,17 @@ changeBtn.onclick = function randomQuote(){
     var randomQuote = Math.floor(Math.random() * quotes.length);
     var randomImage = Math.floor(Math.random() * images.length);
     document.getElementById("random").innerHTML = quotes[randomQuote];
-    //add img to html and grab it here
+    document.getElementById("image").style.background = "url("+ images[randomImage] + ")";
   };
 
 var addQuoteBtn = document.getElementById("addQuote");
 addQuoteBtn.onclick = function newQuote(){
     var input = document.getElementById("input").value;
+    if (input === ""){
+        alert("Please input a quote in the text box");
+      }
+    else {
     quotes.push(input);
+    }
     document.getElementById("input").value = "";
 };
